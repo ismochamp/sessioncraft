@@ -1,0 +1,32 @@
+{
+  "folder": "15_Workshop_Booking",
+  "name": "SessionCraft",
+  "title": "Workshop Booking & Capacity Management",
+  "category": "Web Development",
+  "port": 8195,
+  "problem": "Small workshop organisers need to accept reservations without overselling seats, maintain a fair waiting list, and avoid managing cancellations in scattered messages.",
+  "solution": "A custom WordPress theme and booking plugin connect a responsive workshop catalogue to transactional capacity checks, ordered waiting lists, private cancellation links and staff schedule management.",
+  "features": [
+    "Concurrent reservations with a locked capacity check",
+    "Ordered waiting list with automatic promotion",
+    "Private token-protected status and cancellation",
+    "WordPress staff schedule and reservation management"
+  ],
+  "verification": "15 live WordPress integration checks passed, including five concurrent booking attempts with exactly two confirmed seats at capacity two, FIFO promotion, duplicate rejection and cancellation-token validation.",
+  "limitations": "Locally verified independent project with an original fictional workshop programme. No payments, email notifications, public hosting or real client outcome claims. Schedule times are UTC; reservation details are stored locally.",
+  "flow": "Choose workshop \u2192 Reserve \u2192 Confirm or waitlist \u2192 Cancel \u2192 Promote next participant",
+  "captions": [
+    "Actual WordPress workshop landing page with the SessionCraft identity, clear service message and a route to the session catalogue.",
+    "Actual persisted reservation confirmation with a private self-service cancellation link."
+  ],
+  "features4": [
+    "Concurrent reservations with a locked capacity check",
+    "Ordered waiting list with automatic promotion",
+    "Private token-protected status and cancellation",
+    "WordPress staff schedule and reservation management"
+  ],
+  "screenshots": [
+    "01-workspace.png",
+    "02-result.png"
+  ]
+}
