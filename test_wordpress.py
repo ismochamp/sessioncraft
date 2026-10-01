@@ -18,7 +18,7 @@ def request(web,path='/',data=None,status=200):
 def fields(form):return {k:html.unescape(v) for k,v in re.findall(r'<input[^>]*name="([^"]+)"[^>]*value="([^"]*)"',form)}
 def forms(page,action):return [x for x in re.findall(r'<form\b.*?</form>',page,re.S) if 'value="'+action+'"' in x]
 def check(text):checks.append(text);print('PASS:',text)
-admin=client();guest=client();env=dict(line.split('=',1) for line in (ROOT/'.local.env').read_text().splitlines());request(admin,'/wp-login.php');request(admin,'/wp-login.php',{'log':'portfolio_admin','pwd':env['WP_ADMIN_PASSWORD'],'redirect_to':BASE+'/wp-admin/','testcookie':'1'})
+admin=client();guest=client();env=dict(line.split('=',1) for line in (ROOT/'.local.env').read_text().splitlines());request(admin,'/wp-login.php');request(admin,'/wp-login.php',{'log':'port_admin','pwd':env['WP_ADMIN_PASSWORD'],'redirect_to':BASE+'/wp-admin/','testcookie':'1'})
 page,_=request(guest);assert 'Make room for better work.' in page;check('Actual WordPress theme and booking forms render')
 request(guest,'/wp-admin/admin-post.php',{'action':'sc_book'},403);check('Missing booking nonce rejected')
 request(guest,'/wp-admin/admin-post.php',{'action':'sc_delete','session_id':1},403);check('Anonymous workshop deletion rejected')

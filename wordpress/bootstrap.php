@@ -6,7 +6,7 @@ require '/var/www/html/wp-load.php';
 require_once ABSPATH.'wp-admin/includes/upgrade.php';
 require_once ABSPATH.'wp-admin/includes/plugin.php';
 add_filter('pre_wp_mail',function(){return false;});
-if(!is_blog_installed())wp_install('Sessioncraft','portfolio_admin','admin@example.invalid',false,'',getenv('PORTFOLIO_ADMIN_PASSWORD'));
+if(!is_blog_installed())wp_install('Sessioncraft','port_admin','admin@example.invalid',false,'',getenv('port_ADMIN_PASSWORD'));
 update_option('siteurl','http://127.0.0.1:8195');update_option('home','http://127.0.0.1:8195');
 update_option('permalink_structure','/%postname%/');update_option('blog_public',0);
 $result=activate_plugin('sessioncraft-booking/sessioncraft-booking.php');if(is_wp_error($result)){fwrite(STDERR,$result->get_error_message());exit(1);}

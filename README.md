@@ -31,7 +31,7 @@ Requirements: Docker Desktop running, Python 3, and internet access for the init
 
 The launcher generates fresh database and login passwords in `.local.env` with owner-only permissions. It initializes WordPress and the original sample programme once. Subsequent launches reuse the same database and WordPress volumes. It does not replace existing bookings, clients or projects.
 
-Staff login: **portfolio_admin**, with the password from `WP_ADMIN_PASSWORD` in `.local.env`. WordPress administration: `http://127.0.0.1:8195/wp-admin/`.
+Staff login: **port_admin**, with the password from `WP_ADMIN_PASSWORD` in `.local.env`. WordPress administration: `http://127.0.0.1:8195/wp-admin/`.
 
 Do not share `.local.env`. It is excluded from source control and installable ZIPs. Keep it with your local installation: the project name in it identifies the persistent Docker volumes. Do not delete it when stopping the project.
 
@@ -49,7 +49,7 @@ Open **Stop WordPress.command**, or run `docker compose --env-file .local.env st
 - `compose.yaml`: official image digests, storage and local-only port mapping.
 - `test_wordpress.py`: live integration tests against the local WordPress application.
 - `TEST_RESULTS.md`: recorded verification results.
-- `CASE_STUDY.md`, `screenshots/`: portfolio material.
+- `screenshots/`: material.
 
 To install in another WordPress environment, install and activate the plugin ZIP, then install and activate the theme ZIP. Plugin activation creates its tables. The local bootstrap is specific to the supplied Docker environment and should not be run on a client installation. Create your own content through the application after installation.
 
@@ -83,9 +83,7 @@ Custom InnoDB tables store workshops and reservations. Booking and cancellation 
 
 ## Project documentation
 
-- [Case study](CASE_STUDY.md)
 - [Recorded verification](TEST_RESULTS.md)
-- [Portfolio PDF](PORTFOLIO.pdf)
 - [Screenshot captions](screenshots/CAPTIONS.md)
 
 ## License
